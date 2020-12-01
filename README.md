@@ -22,8 +22,7 @@ files: Makefile,deployment.yaml
 ## test locally
 + run `go run main/server.go` verify that the server is starting
 + install `evans` from https://github.com/ktr0731/evans
-+ run `echo '{"body":"my grpc service"}'| evans --host 127.0.0.1  -p 8443 -t -r --servername kubetest.sandrom.de
-   --cacert cert/cert.pem cli call chat.ChatService.SayHello`
++ run `echo '{"body":"my grpc service"}'| evans --host 127.0.0.1  -p 8443 -t -r --servername kubetest.sandrom.de --cacert cert/cert.pem cli call chat.ChatService.SayHello`
 + verify that you get a response.
 + recommended: play with evans in REPL interactive mode (very cool): `evans --host 127.0.0.1  -p 8443 -t -r --servername kubetest.sandrom.de --cacert cert/cert.pem`  
    
