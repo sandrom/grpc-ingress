@@ -4,10 +4,11 @@ import (
 	"context"
 	"crypto/tls"
 	"crypto/x509"
+	"log"
+
 	"github.com/Qwilt/grpc-ingress/chat"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-	"log"
 )
 
 func loadTLSCliCredentials() (credentials.TransportCredentials, error) {
@@ -25,7 +26,7 @@ func loadTLSCliCredentials() (credentials.TransportCredentials, error) {
 	// Create the credentials and return it
 	config := &tls.Config{
 		RootCAs:            certPool,
-		ServerName:         "<my domain>",
+		ServerName:         "kubetest.sandrom.de",
 		InsecureSkipVerify: true,
 	}
 
@@ -39,7 +40,7 @@ func main() {
 	}
 
 	var conn *grpc.ClientConn
-	conn, err = grpc.Dial("<my domain>:443", grpc.WithTransportCredentials(tlsCredentials))
+	conn, err = grpc.Dial("kubetest.sandrom.de:443", grpc.WithTransportCredentials(tlsCredentials))
 	if err != nil {
 		log.Fatalf("did not connect: %s", err)
 	}

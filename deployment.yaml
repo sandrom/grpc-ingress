@@ -43,7 +43,7 @@ metadata:
 spec:
   tls:
     - hosts:
-      - <my domain>
+      - kubetest.sandrom.de
       secretName: grpc-cert-self-managed
   backend:
     serviceName: grpcserver
@@ -67,7 +67,7 @@ spec:
         app: grpcserver
     spec:
       containers:
-      - image: <my docker image>
+      - image: sandrom/kubegrpctest
         imagePullPolicy: Always
         name: grpcserver
         ports:
