@@ -51,7 +51,7 @@ metadata:
   name: grpc-cert
 spec:
   domains:
-    - kubetest.sandrom.de
+    - kubetest2.sandrom.de
 ---
 apiVersion: apps/v1
 kind: Deployment

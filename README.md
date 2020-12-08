@@ -22,9 +22,9 @@ files: Makefile,deployment.yaml
 ## test locally
 + run `go run main/server.go` verify that the server is starting
 + install `evans` from https://github.com/ktr0731/evans
-+ run `echo '{"body":"my grpc service"}'| evans --host 127.0.0.1  -p 8443 -t -r --servername kubetest.sandrom.de --cacert cert/cert.pem cli call chat.ChatService.SayHello`
++ run `echo '{"body":"my grpc service"}'| evans --host 127.0.0.1  -p 8443 -t -r --servername kubetest2.sandrom.de --cacert cert/cert.pem cli call chat.ChatService.SayHello`
 + verify that you get a response.
-+ recommended: play with evans in REPL interactive mode (very cool): `evans --host 127.0.0.1  -p 8443 -t -r --servername kubetest.sandrom.de --cacert cert/cert.pem`  
++ recommended: play with evans in REPL interactive mode (very cool): `evans --host 127.0.0.1  -p 8443 -t -r --servername kubetest2.sandrom.de --cacert cert/cert.pem`  
    
 ## build and deploy
 + run `make build` - verify an executable was created in the bin directory `ls -l  bin`
@@ -38,7 +38,7 @@ and update your dns (gcp https://console.cloud.google.com/net-services/dns). map
 ingress external IP
 + wait until the dns record propagates. You can check it with `dig
 + run `go run main/cli.go` and verify that the response is "Hello I'm the client" 
-+ you can also try evans `evans --host kubetest.sandrom.de -p 443 -t -r --cacert cert/cert.pem`
++ you can also try evans `evans --host kubetest2.sandrom.de -p 443 -t -r --cacert cert/cert.pem`
 
 ## Open Issues
 + GRPC [Health Checking Protocol](https://github.com/grpc/grpc/blob/master/doc/health-checking.md) works for kubernetes container probes as shown in https://cloud.google.com/blog/topics/developers-practitioners/health-checking-your-grpc-servers-gke, 

@@ -1,5 +1,5 @@
-DOCKER_IMAGE = sandrom/kubegrpctest
-DNS_NAME = kubetest.sandrom.de
+DOCKER_IMAGE = sandrom/kubegrpctest2
+DNS_NAME = kubetest2.sandrom.de
 
 export CGO_ENABLED = 0
 export GOARCH = amd64

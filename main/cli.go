@@ -26,7 +26,7 @@ func loadTLSCliCredentials() (credentials.TransportCredentials, error) {
 	// Create the credentials and return it
 	config := &tls.Config{
 		RootCAs:            certPool,
-		ServerName:         "kubetest.sandrom.de",
+		ServerName:         "kubetest2.sandrom.de",
 		InsecureSkipVerify: true,
 	}
 
@@ -40,7 +40,7 @@ func main() {
 	}
 
 	var conn *grpc.ClientConn
-	conn, err = grpc.Dial("kubetest.sandrom.de:443", grpc.WithTransportCredentials(tlsCredentials))
+	conn, err = grpc.Dial("kubetest2.sandrom.de:443", grpc.WithTransportCredentials(tlsCredentials))
 	if err != nil {
 		log.Fatalf("did not connect: %s", err)
 	}
