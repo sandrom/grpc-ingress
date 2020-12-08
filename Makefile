@@ -1,5 +1,5 @@
 DOCKER_IMAGE = sandrom/kubegrpctest2
-DNS_NAME = kubetest2.sandrom.de
+DNS_NAME = this.does.not.matter.com
 
 export CGO_ENABLED = 0
 export GOARCH = amd64
